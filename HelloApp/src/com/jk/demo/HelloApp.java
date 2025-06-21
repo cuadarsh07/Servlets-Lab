@@ -1,0 +1,20 @@
+package com.jk.demo;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(name = "hello", urlPatterns = { "/myhello.jk" })
+public class HelloApp extends HttpServlet {
+
+	public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+		System.out.println("HelloApp - service()");
+
+		response.sendRedirect("http://localhost:6523/HaiApp/hai.jk?email=sri@jk&phone=12345&city=Blore");  
+
+	}
+}
